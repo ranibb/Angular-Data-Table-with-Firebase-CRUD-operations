@@ -33,3 +33,13 @@ mat-radio-group mat-radio-button{
 .button-row button{
     margin: 5px;
 }
+
+snack-bar-container.success {
+    background: #5cb85c;
+    color: #FFF;
+}
+
+snack-bar-container.notification {
+    font-size: 18px !important;
+    font-weight: bold;
+}
