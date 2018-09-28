@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../../shared/employee.service';
-import { MatTableModule, MatTableDataSource } from '@angular/material';
+import { MatTableDataSource } from '@angular/material';
 
 
 
@@ -12,7 +12,7 @@ import { MatTableModule, MatTableDataSource } from '@angular/material';
 export class EmployeeListComponent implements OnInit {
 
   listData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['fullName']
+  displayedColumns: string[] = ['fullName', 'email', 'mobile', 'city', 'actions']
 
   constructor(private service: EmployeeService) { }
 
