@@ -2,8 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { EmployeeService } from '../../shared/employee.service';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 
-
-
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
@@ -20,6 +18,8 @@ export class EmployeeListComponent implements OnInit {
   @ViewChild(MatPaginator)
   paginator: MatPaginator
 
+  searchKey: string;
+
   constructor(private service: EmployeeService) { }
 
   ngOnInit() {
@@ -33,6 +33,15 @@ export class EmployeeListComponent implements OnInit {
         this.listData.paginator = this.paginator;
       }
     );
+  }
+
+  onSearchClear() {
+    this.searchKey = "";
+    this.applyFilter();
+  }
+  
+  applyFilter() {
+    this.listData.filter = this.searchKey.trim().toLowerCase();
   }
 
 }
