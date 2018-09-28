@@ -16,6 +16,7 @@ export class DepartmentService {
         this.array = list.map(item => {
           return { $key:item.key, ...item.payload.val() }
         })
-      })
+      }
+    )
   }
 }

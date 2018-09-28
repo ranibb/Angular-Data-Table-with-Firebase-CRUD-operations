@@ -39,7 +39,7 @@ export class EmployeeService {
 
   getEmployees() {
     this.employeeList = this.firebase.list('employees');
-    return this.employeeList.snapshotChanges
+    return this.employeeList.snapshotChanges();
   }
 
   insertEmployee(employee) {
