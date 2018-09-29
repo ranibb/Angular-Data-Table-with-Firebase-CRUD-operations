@@ -14,13 +14,15 @@ import { environment } from "../environments/environment";
 import { DepartmentService } from "./shared/department.service";
 import { EmployeeListComponent } from './employees/employee-list/employee-list.component';
 import { DatePipe } from '@angular/common';
+import { MatConfirmDialogComponent } from './mat-confirm-dialog/mat-confirm-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeesComponent,
     EmployeeComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    MatConfirmDialogComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -34,6 +36,6 @@ import { DatePipe } from '@angular/common';
   ],
   providers: [EmployeeService, DepartmentService, DatePipe],
   bootstrap: [AppComponent],
-  entryComponents: [EmployeeComponent]
+  entryComponents: [EmployeeComponent, MatConfirmDialogComponent]
 })
 export class AppModule { }
