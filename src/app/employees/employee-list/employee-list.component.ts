@@ -45,7 +45,7 @@ export class EmployeeListComponent implements OnInit {
         this.listData.paginator = this.paginator;
         this.listData.filterPredicate = (data, filter) => {
           return this.displayedColumns.some(ele => {
-            return ele != 'actions' && data[ele].toLowerCase().indexof(filter) != -1;
+            return ele != 'actions' && data[ele].toLowerCase().indexOf(filter) != -1;
           })
         }
       }
