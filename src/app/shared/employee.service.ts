@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
 import { DatePipe } from '@angular/common';
+import * as _ from 'lodash';
 
 @Injectable({
   providedIn: 'root'
@@ -71,5 +72,9 @@ export class EmployeeService {
 
   deleteEmployee($key: string) {
     this.employeeList.remove($key)
+  }
+
+  populateForm(employee) {
+    this.form.setValue(_.omit(employee, 'departmentName'));
   }
 }
